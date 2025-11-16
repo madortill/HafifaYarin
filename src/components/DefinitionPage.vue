@@ -25,23 +25,26 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 402px;
+    width: 100%;
     height: 91vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
   }
    
   .definition-text {
-    
     display: flex;
     flex-wrap: wrap;
     background-color: #fffff6;
     border-radius: 10%;
     height: 12rem;
     width: 15rem;
-    margin-top: 10rem;
-    margin-left: 5rem;
     font-size: 1.8rem;
     font-family: 'karantina-light';
     color:black;
@@ -53,8 +56,8 @@
  
   .over-image {
     display: flex;
-    margin-top: 3rem;
-    margin-left: 50%;
+    margin-top:-4rem ;
+    margin-left: 13rem;
     transform: translateX(-50%);
     width: 13rem;
     z-index: 10;

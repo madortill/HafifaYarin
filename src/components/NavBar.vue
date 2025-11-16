@@ -52,22 +52,25 @@ export default {
     justify-content: space-between;
     align-items: center;
     width:100%;
-    top:0ch;
+    top:0rem;
+    left: 0rem;
     background-color: #faf9f1;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 9999;
+    box-sizing: border-box;
   }
   
   .menu-item {
     flex: 1;
     text-align: center;
-    padding: 4vw 0;
+    padding: 1rem 0;
     font-family: "Karantina-Light";
     font-size: 2rem;
     cursor: pointer;
     color: #000;
-    border-left: 0.5ch solid red;
+    border-left: 0.2rem solid red;
+    box-sizing: border-box;
   }
   
  

@@ -2,8 +2,8 @@
     <div class="app">
       <open-page v-if="page === 0" @start="page = 1"/>
       <info-page v-if="page === 1" @nextPage="page = 2"/>
-      <definition-Page v-if="page === 2"></definition-Page>
       <arrows  v-if="page >=2 && page < 7" @forward="page < 8 && (page += 1)" @back="page > 1 && (page -= 1)"/>
+      <definition-Page v-if="page === 2"></definition-Page>
       <nav-bar v-if="page >= 2 && page < 7" :selected="page" @select="handleSelect"> </nav-bar>
       <kinds v-if="page === 3"></kinds>
       <how-to-bomb-page v-if="page === 4"></how-to-bomb-page>
@@ -15,11 +15,12 @@
 </template>
 
 <script>
+
 import OpenPage from './components/OpenPage.vue';
 // import About from './components/About.vue';
 import InfoPage from './components/InfoPage.vue';
-import DefinitionPage from './components/DefinitionPage.vue';
 import Arrows from './components/Arrows.vue';
+import DefinitionPage from './components/DefinitionPage.vue';
 import NavBar from './components/NavBar.vue';
 import Kinds from './components/Kinds.vue';
 import HowToBombPage from './components/HowToBombPage.vue';

@@ -1,7 +1,7 @@
  <template>
-    <div>
-      <button @click="back" class="back-arrow">  > חזור </button>
-      <button @click="forward" class="forward-arrow"> הבא > </button>
+    <div class="arrows">
+      <button @click="back" class="back-arrow">   חזור </button>
+      <button @click="forward" class="forward-arrow"> הבא  </button>
     </div>
   </template>
   
@@ -23,33 +23,37 @@
   };
   </script> 
 
-  <style>
-    .back-arrow {
-        background:none;
-        position: fixed;
-        font-family:'karantrina-regular' ;
-        font-size: 5ch;
-        top:75vh;
-        left:1vw;
-        display: flex;
-        gap: 20px;
-        z-index: 9999;
-        color: white;
-        border: none;
+  <style> 
+  .arrows {
+    position: absolute;
+  bottom: 2rem;       
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 20;
+  padding: 0 2rem; 
+   
+   }
+  .back-arrow {
+    background: none;
+  font-family: 'karantrina-regular';
+  font-size: 5ch;
+  color: white;
+  border: none;
+  z-index: 30;
     }
 
-    .forward-arrow {
-        background:none;
-        position: fixed;
-        font-family:'karantrina-regular' ;
-        font-size: 5ch;
-        top:75vh;
-        left: 70vw;
-        display: flex;
-        gap: 20px;
-        z-index: 9999;
-        color: white;
-        border: none;
+  .forward-arrow {
+    background: none;
+  font-family: 'karantrina-regular';
+  font-size: 5ch;
+  color: white;
+  border: none;
+  z-index: 30;
     }
 
 </style>

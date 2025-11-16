@@ -36,17 +36,21 @@ export default {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .header {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 8rem;
-  margin-left: 6rem; 
-  font-size: 7ch;
-  color: white; 
-  font-family: "Karantina-Bold";
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    text-align: center;
+    font-size: 7ch;
+    color: #fff;
+    font-family: Karantina-Bold;
 
 }
 
@@ -54,8 +58,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 6rem;
-  margin-top: 24rem;
   background-color: #ffc814;
   font-family: 'Karantina-Bold';
   color: white;

@@ -32,16 +32,20 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 402px;
+    width: 100%;
     height: 91vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
   
   .header {
     display: flex;
-    margin-left:8rem ;
+    margin-top: 0.5rem;
     font-size: 7ch;
     color: white; 
     margin-bottom: 0.5rem;
@@ -52,8 +56,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color:#FFFFF6;
-    margin-top: 2rem;
-    margin-left: 3.9rem;
+
     font-family: 'Karantina-light';
     color: black;
     font-size: 2rem;
@@ -74,8 +77,6 @@
     border-radius: 2ch;
     flex-direction: column;
     justify-content: center;
-    margin-left: 6.5rem;
-    margin-top: 4rem;
     width: 12rem;
     height: 5.5rem;
   }
