@@ -19,7 +19,6 @@
   </script>
   
   <style scoped>
-  
   .how-to-bomb-page {
     background-image: url("../assets/media/background.svg");
     background-position: center;
