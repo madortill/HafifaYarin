@@ -43,7 +43,7 @@
   
       
       <div class="controls">
-        <img src="@/assets/media/joystick.png" class="arrow-pad" />
+        <img src="@/assets/media/joyStick.png" class="arrow-pad" />
         <div class="arrow-overlay up" @click="move('up')"></div>
         <div class="arrow-overlay down" @click="move('down')"></div>
         <div class="arrow-overlay left" @click="move('right')"></div>
