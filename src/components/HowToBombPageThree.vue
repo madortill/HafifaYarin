@@ -23,7 +23,7 @@ export default {
     setTimeout(() => {
       this.isFired = true;
       this.laserImage = "src/assets/media/Artboard40.svg";
-      this.astroidImage = "src\assets\media\explode.png"; 
+      this.astroidImage = "src/assets/media/explode.png"; 
 
       this.text = "11h 46m 13s -24° 25' 40";
     }, 1000);

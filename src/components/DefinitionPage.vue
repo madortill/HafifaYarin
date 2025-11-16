@@ -2,7 +2,7 @@
     <div id="DefinitionPage" class="definition-page">
         <div class="definition-text"> אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש.   הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים.
         </div>
-        <img src="/src/assets/media/Artboard 36.svg" alt="astroid" class="over-image"/>
+        <img src="/src/assets/media/Artboard36.svg" alt="astroid" class="over-image"/>
     </div>
   </template>
 
