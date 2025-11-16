@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .open-page {
-  background-image: url("/media/background.svg");
+  background-image: url("../assets/media/background.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

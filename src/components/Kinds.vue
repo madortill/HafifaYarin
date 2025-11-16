@@ -18,9 +18,9 @@
     data() {
       return {
         cards: [
-          { text: "אסטרואיד בייבי - אסטרואיד ממש קטן והורס רק שכונות מקומיות." , image : '/media/אסטרואיד-ילד.png'},
-          { text: "אסטרואיד נער מתבגר - אסטרואיד שהוא די חרא כי הוא בכוונה מנסה להפציץ מקומות שהוא לא אוהב.", image : '/media/אסטרואיד-מתבגר.png' },
-          { text: ". אסטרואיד בוגר - אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ." , image : '/media/אסטרואיד-זקן.png' }
+          { text: "אסטרואיד בייבי - אסטרואיד ממש קטן והורס רק שכונות מקומיות." , image : '../src/assets/media/אסטרואיד-ילד.png'},
+          { text: "אסטרואיד נער מתבגר - אסטרואיד שהוא די חרא כי הוא בכוונה מנסה להפציץ מקומות שהוא לא אוהב.", image : '../src/assets/media/אסטרואיד-מתבגר.png' },
+          { text: ". אסטרואיד בוגר - אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ." , image : '../src/assets/media/אסטרואיד-זקן.png' }
         ]
       };
     }
@@ -29,7 +29,7 @@
   
   <style scoped>
   .kinds-page {
-    background-image: url("/media/background.svg");
+    background-image: url("../assets/media/background.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -66,10 +66,10 @@
         currentQuestion: {},
         selectedAnswer: null,
         images: {
-          6: "/media/קסדה.png",
-          8: "/media/חליפה.png",
-          19: "/media/בלון.png",
-          23: "/media/אסטרונאוט.png",
+          6: "../assets/media/קסדה.png",
+          8: "../assets/media/חליפה.png",
+          19: "../assets/media/בלון.png",
+          23: "../assets/media/אסטרונאוט.png",
         },
         itemNames: {
           6: "קסדה",
