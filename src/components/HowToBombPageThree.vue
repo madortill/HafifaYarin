@@ -1,6 +1,6 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-three">
-        <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
+        <img src="/media/Artboard36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
         <img :src="laserImage" alt="laser" class="laser" :class="{fired: isFired}"/>
         <div class="text"> {{text}}</div>
     </div>
@@ -15,15 +15,15 @@ export default {
     return {
       isFired: false,
       text: "12h 46m 13s -24° 25' 990\"",
-      laserImage: "src/assets/media/Artboard40.svg",
-      astroidImage: "src/assets/media/Artboard36.svg"
+      laserImage: "/media/Artboard40.svg",
+      astroidImage: "/media/Artboard36.svg"
     };
   },
   mounted() {
     setTimeout(() => {
       this.isFired = true;
-      this.laserImage = "src/assets/media/Artboard40.svg";
-      this.astroidImage = "src/assets/media/explode.png"; 
+      this.laserImage = "/media/Artboard40.svg";
+      this.astroidImage = "/media/explode.png"; 
 
       this.text = "11h 46m 13s -24° 25' 40";
     }, 1000);
@@ -34,7 +34,7 @@ export default {
   
   <style scoped>
   .how-to-bomb-page-three  {
-    background-image: url("../assets/media/background.svg");
+    background-image: url("/media/background.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

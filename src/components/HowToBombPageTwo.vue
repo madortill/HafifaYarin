@@ -1,8 +1,8 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-two">
-      <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid"/>
+      <img src="/media/Artboard36.svg" alt="astroid" class="astroid"/>
       <div class="text"> 11h 46m 13s -24° 25' 40"</div>
-        <img src="src/assets/media/Halalit.png" alt="halalit" class="halalit"/>  
+        <img src="/media/Halalit.png" alt="halalit" class="halalit"/>  
        
     </div>
   </template>
@@ -22,7 +22,7 @@
   
   <style scoped>
   .how-to-bomb-page-two  {
-    background-image: url("../assets/media/background.svg");
+    background-image: url("/media/background.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
