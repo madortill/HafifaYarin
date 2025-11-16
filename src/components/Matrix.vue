@@ -40,7 +40,6 @@
           </div>
         </div>
       </div>
-  
       
       <div class="controls">
         <img src="@/assets/media/joyStick.png" class="arrow-pad" />
