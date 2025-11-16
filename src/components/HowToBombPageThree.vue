@@ -1,6 +1,6 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-three">
-        <img src="src/assets/media/Artboard 36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
+        <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
         <img :src="laserImage" alt="laser" class="laser" :class="{fired: isFired}"/>
         <div class="text"> {{text}}</div>
     </div>
@@ -15,14 +15,14 @@ export default {
     return {
       isFired: false,
       text: "12h 46m 13s -24° 25' 990\"",
-      laserImage: "src/assets/media/Artboard 40.svg",
-      astroidImage: "src/assets/media/Artboard 36.svg"
+      laserImage: "src/assets/media/Artboard40.svg",
+      astroidImage: "src/assets/media/Artboard36.svg"
     };
   },
   mounted() {
     setTimeout(() => {
       this.isFired = true;
-      this.laserImage = "src/assets/media/Artboard 40.svg";
+      this.laserImage = "src/assets/media/Artboard40.svg";
       this.astroidImage = "src\assets\media\explode.png"; 
 
       this.text = "11h 46m 13s -24° 25' 40";

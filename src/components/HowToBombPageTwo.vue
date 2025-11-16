@@ -1,6 +1,6 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-two">
-      <img src="src/assets/media/Artboard 36.svg" alt="astroid" class="astroid"/>
+      <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid"/>
       <div class="text"> 11h 46m 13s -24° 25' 40"</div>
         <img src="src/assets/media/Halalit.png" alt="halalit" class="halalit"/>  
        
