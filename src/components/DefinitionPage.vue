@@ -21,6 +21,7 @@
   
   <style scoped>
   .definition-page {
+
     background-image: url("../assets/media/background.svg");
     background-position: center;
     background-size: cover;

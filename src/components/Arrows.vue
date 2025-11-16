@@ -1,6 +1,6 @@
  <template>
     <div class="arrows">
-      <button @click="back" class="back-arrow">   חזור </button>
+      <button @click="back" class="back-arrow"> חזור </button>
       <button @click="forward" class="forward-arrow"> הבא  </button>
     </div>
   </template>
@@ -25,17 +25,16 @@
 
   <style> 
   .arrows {
-    position: absolute;
-  bottom: 2rem;       
-  left: 0;
-  width: 100%;
+    position: fixed;
+  top: 42rem;       
+  left: 0.5rem;
+  width: 90%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  z-index: 20;
-  padding: 0 2rem; 
+  z-index: 9999;
    
    }
   .back-arrow {
@@ -44,7 +43,7 @@
   font-size: 5ch;
   color: white;
   border: none;
-  z-index: 30;
+ 
     }
 
   .forward-arrow {
@@ -53,7 +52,7 @@
   font-size: 5ch;
   color: white;
   border: none;
-  z-index: 30;
+ 
     }
 
 </style>
