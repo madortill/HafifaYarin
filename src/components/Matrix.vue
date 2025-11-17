@@ -107,7 +107,7 @@ export default {
             "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"
           ],
           correct:
-            ". חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"
+             "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"
         },
 
         23: {
@@ -161,7 +161,10 @@ export default {
 
     openTriviaPopup(position) {
       if (position === 23) {
-        this.$router.push("/finish");
+        this.popupImage = this.images[position];
+        this.currentItemPosition = position;
+        this.currentQuestion = this.trivia[position];
+        this.showPopup = true;
         return;
       }
 
@@ -177,6 +180,15 @@ export default {
       setTimeout(() => {
         delete this.images[this.currentItemPosition];
         this.$emit("collect-item");
+
+        if (this.currentItemPosition === 23){
+          this.showPopup = false;
+          this.selectedAnswer = null;
+          this.currentItemPosition = null;
+
+          this.$emit ("change" , 9);
+          return;
+        }
 
         this.showPopup = false;
         this.selectedAnswer = null;
