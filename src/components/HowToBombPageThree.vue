@@ -2,7 +2,7 @@
     <div id="HowToBombPageTwo" class="how-to-bomb-page-three">
         <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
         <div>
-          <img :src="laserImage" alt="laser" class="laser" :class="{fired: isFired}"/>
+          <img src="src/assets/media/Artboard40.svg" alt="laser" class="laser" :class="{fired: isFired}"/>
           <div class="text"> {{text}}</div>
         </div>
     </div>

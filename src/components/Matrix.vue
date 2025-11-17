@@ -1,165 +1,192 @@
 
 <template>
-    <div class="matrix">
-     
-      <div
-        v-for="(cell, displayIndex) in reversedCells"
-        :key="displayIndex"
-        class="matrix-cell"
-      >
-        <img
-          v-if="playerPosition === cell"
-          src="@/assets/media/חייל.png"
-          class="player"
-        />
-  
-        <img
-          v-if="images[cell]"
-          :src="images[cell]"
-          class="cell-image"
-        />
-      </div>
-  
-      
-      <div v-if="showPopup" class="popup">
-        <div class="popup-content">
-          <img :src="popupImage" class="popup-image" />
-          <p class="popup-question">{{ currentQuestion.question }}</p>
-          <div class="popup-buttons">
-            <button
-              v-for="(answer, index) in currentQuestion.answers"
-              :key="index"
-              @click="handleAnswer(answer)"
-              :class="{
-                correct: selectedAnswer === answer && answer === currentQuestion.correct,
-                wrong: selectedAnswer === answer && answer !== currentQuestion.correct
-                }"
-              >
-               {{ answer }}
-            </button>
-          </div>
+  <div class="matrix">
+    <div
+      v-for="(cell, displayIndex) in reversedCells"
+      :key="displayIndex"
+      class="matrix-cell"
+    >
+      <img
+        v-if="playerPosition === cell"
+        src="@/assets/media/חייל.png"
+        class="player"
+      />
+
+      <img
+        v-if="images[cell]"
+        :src="images[cell]"
+        class="cell-image"
+      />
+    </div>
+
+    <div v-if="showPopup" class="popup">
+      <div class="popup-content">
+        <img :src="popupImage" class="popup-image" />
+        <p class="popup-question">{{ currentQuestion.question }}</p>
+
+        <div class="popup-buttons">
+          <button
+            v-for="(answer, index) in currentQuestion.answers"
+            :key="index"
+            @click="handleAnswer(answer)"
+            :class="{
+              correct: selectedAnswer === answer && answer === currentQuestion.correct,
+              wrong: selectedAnswer === answer && answer !== currentQuestion.correct
+            }"
+          >
+            {{ answer }}
+          </button>
         </div>
       </div>
-      
-      <div class="controls">
-        <img src="@/assets/media/joyStick.png" class="arrow-pad" />
-        <div class="arrow-overlay up" @click="move('up')"></div>
-        <div class="arrow-overlay down" @click="move('down')"></div>
-        <div class="arrow-overlay left" @click="move('right')"></div>
-        <div class="arrow-overlay right" @click="move('left')"></div>
-      </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "GameMatrix",
-    data() {
-      return {
-        rows: 6,
-        cols: 4,
-        playerPosition: 0,
-        showPopup: false,
-        popupImage: "",
-        currentItemPosition: null,
-        currentQuestion: {},
-        selectedAnswer: null,
-        images: {
-          6: "src/assets/media/helmet.png",
-          8: "@/assets/media/suit.png",
-          19: "@/assets/media/balon.png",
-          23: "@/assets/media/astronaut.png",
-        },
-        itemNames: {
-          6: "קסדה",
-          8: "חליפת חלל",
-          19: "בלון חמצן",
-          23: "אסטרונאוט חדש!",
-        },
-        trivia: {
-          6: {
-            question: "מהו אסטרואיד",
-            answers: ["כדור דיסקו שחור שרוף בחלל", "כדור לבן גדול בחלל", "אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש.   הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים"],
-            correct: "אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש.   הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים"
-          },
-          8: {
-            question: "כמה סוגי אסטרואידים יש?",
-            answers: ["3- בייבי מתבגר ובוגר - כל אחד מהם הרסני במידה שונה ואף יכול להשמיד את כדור הארץ כולו", "2 - בייבי ובוגר - הרסניים במידות שונות ", "3 - בייבי, מתבגר ובוגר - כולם הרסנייים באותה מידה "],
-            correct: "3- בייבי מתבגר ובוגר - כל אחד מהם הרסני במידה שונה ואף יכול להשמיד את כדור הארץ כולו",
-          },
-          19: {
-            question: "איך מפוצצים אסטרואיד?",
-            answers: ["לירות על אוטומט" ,  
-            "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. 3. לחכות שיתקרב האסטרואיד לירות ולפוצץ את האסטרואיד",
-            "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"],
-            correct: "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד",
-          },
-          23: { 
 
-          }
-        },
-      };
-    },
-    computed: {
-      totalCells() {
-        return this.rows * this.cols;
-      },
-      reversedCells() {
-        return Array.from({ length: this.totalCells }, (_, i) => this.totalCells - 1 - i);
-      },
-    },
-    methods: {
-      move(direction) {
-       
-        if (this.showPopup) return;
-  
-        let newPosition = this.playerPosition;
-  
-        switch (direction) {
-          case "up":
-            if (newPosition + this.cols < this.totalCells) newPosition += this.cols;
-            break;
-          case "down":
-            if (newPosition - this.cols >= 0) newPosition -= this.cols;
-            break;
-          case "left":
-            if (newPosition % this.cols !== this.cols - 1) newPosition++;
-            break;
-          case "right":
-            if (newPosition % this.cols !== 0) newPosition--;
-            break;
-        }
-  
-        this.playerPosition = newPosition;
-  
-        
-        if (this.images[this.playerPosition]) {
-          this.openTriviaPopup(this.playerPosition);
-        }
-      },
-  
-      openTriviaPopup(position) {
-        this.popupImage = this.images[position];
-        this.currentItemPosition = position;
-        this.currentQuestion = this.trivia[position];
-        this.showPopup = true;
-      },
-  
-      handleAnswer(answer) {
-        this.selectedAnswer = answer;
-        setTimeout(() => {
-          delete this.images[this.currentItemPosition];
-          this.$emit("collect-item");
+   
+    <div class="controls">
+      <img src="@/assets/media/joyStick.png" class="arrow-pad" />
+      <div class="arrow-overlay up" @click="move('up')"></div>
+      <div class="arrow-overlay down" @click="move('down')"></div>
+      <div class="arrow-overlay left" @click="move('right')"></div>
+      <div class="arrow-overlay right" @click="move('left')"></div>
+    </div>
+  </div>
+</template>
 
-          this.showPopup = false;
-          this.selectedAnswer = null;
-          this.currentItemPosition = null;
-        }, 600);
+<script>
+
+import helmet from "../assets/media/helmet.png";
+import suit from "@/assets/media/suit.png";
+import balon from "@/assets/media/balon.png";
+import astronaut from "@/assets/media/astronaut.png";
+
+export default {
+  name: "GameMatrix",
+
+  data() {
+    return {
+      rows: 6,
+      cols: 4,
+      playerPosition: 0,
+      showPopup: false,
+      popupImage: "",
+      currentItemPosition: null,
+      currentQuestion: {},
+      selectedAnswer: null,
+
       
+      images: {
+        6: helmet,
+        8: suit,
+        19: balon,
+        23: astronaut, //
       },
+
+      trivia: {
+        6: {
+          question: "מהו אסטרואיד?",
+          answers: [
+            "כדור דיסקו שחור שרוף בחלל",
+            "כדור לבן גדול בחלל",
+            "אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש.   הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים"
+          ],
+          correct:
+            "אסטרואיד הוא יצור מרושע שמטרתו להשמיד את כדור הארץ ואנחנו בברוגז איתו, ממש.   הוא נראה כמו כדור עגול כזה אבל לא חלק כי יש לו בליטות ממש מכוערות שנראות כמו חצ'קונים"
+        },
+        8: {
+          question: "כמה סוגי אסטרואידים יש?",
+          answers: [
+            "3- בייבי מתבגר ובוגר - כל אחד מהם הרסני במידה שונה ואף יכול להשמיד את כדור הארץ כולו",
+            "2 - בייבי ובוגר",
+            "3 - בייבי, מתבגר ובוגר - כולם הרסניים באותה מידה"
+          ],
+          correct: "3- בייבי מתבגר ובוגר - כל אחד מהם הרסני במידה שונה ואף יכול להשמיד את כדור הארץ כולו"
+        },
+        19: {
+          question: "איך מפוצצים אסטרואיד?",
+          answers: [
+                       "לירות על אוטומט" ,"1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. 3. לחכות שיתקרב האסטרואיד לירות ולפוצץ את האסטרואיד",
+            "1. חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"
+          ],
+          correct:
+            ". חישוב קואורדינטות מיקום האסטרואיד לפי תחנת השיגור 2. לכוון את משגר הפצצות לכיוון האסטרואיד 3. לירות ולפוצץ את האסטרואיד"
+        },
+
+        23: {
+          question: "הצלחת! רוצה לסיים את המשחק?",
+          answers: ["כן!"],
+          correct: "כן!"
+        }
+      }
+    };
+  },
+
+  computed: {
+    totalCells() {
+      return this.rows * this.cols;
     },
-  };
-  </script>
+    reversedCells() {
+      return Array.from(
+        { length: this.totalCells },
+        (_, i) => this.totalCells - 1 - i
+      );
+    }
+  },
+
+  methods: {
+    move(direction) {
+      if (this.showPopup) return;
+
+      let newPosition = this.playerPosition;
+
+      switch (direction) {
+        case "up":
+          if (newPosition + this.cols < this.totalCells) newPosition += this.cols;
+          break;
+        case "down":
+          if (newPosition - this.cols >= 0) newPosition -= this.cols;
+          break;
+        case "left":
+          if (newPosition % this.cols !== this.cols - 1) newPosition++;
+          break;
+        case "right":
+          if (newPosition % this.cols !== 0) newPosition--;
+          break;
+      }
+
+      this.playerPosition = newPosition;
+
+      if (this.images[this.playerPosition]) {
+        this.openTriviaPopup(this.playerPosition);
+      }
+    },
+
+    openTriviaPopup(position) {
+      if (position === 23) {
+        this.$router.push("/finish");
+        return;
+      }
+
+      this.popupImage = this.images[position];
+      this.currentItemPosition = position;
+      this.currentQuestion = this.trivia[position];
+      this.showPopup = true;
+    },
+
+    handleAnswer(answer) {
+      this.selectedAnswer = answer;
+
+      setTimeout(() => {
+        delete this.images[this.currentItemPosition];
+        this.$emit("collect-item");
+
+        this.showPopup = false;
+        this.selectedAnswer = null;
+        this.currentItemPosition = null;
+      }, 600);
+    }
+  }
+};
+</script>
+
   
   <style scoped>
   .matrix {
