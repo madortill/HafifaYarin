@@ -1,8 +1,9 @@
  <template>
+
     <div class="arrows">
       <button @click="back" class="back-arrow"> חזור </button>
       <button @click="forward" class="forward-arrow"> הבא  </button>
-    </div>
+    </div>    
   </template>
   
   <script>
@@ -25,11 +26,11 @@
 
   <style> 
   .arrows {
-    position: fixed;
-  top: 42rem;       
-  left: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 0rem;
   width: 90%;
-
+    transform: translatex(1rem);
   display: flex;
   justify-content: space-between;
   align-items: center;

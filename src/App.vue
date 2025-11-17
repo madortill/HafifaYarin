@@ -1,16 +1,16 @@
 <template>
     <div class="app">
+      <nav-bar v-if="page >= 2 && page < 7" :selected="page" @select="handleSelect"> </nav-bar>
       <open-page v-if="page === 0" @start="page = 1"/>
       <info-page v-if="page === 1" @nextPage="page = 2"/>
-      <arrows  v-if="page >=2 && page < 7" @forward="page < 8 && (page += 1)" @back="page > 1 && (page -= 1)"/>
       <definition-Page v-if="page === 2"></definition-Page>
-      <nav-bar v-if="page >= 2 && page < 7" :selected="page" @select="handleSelect"> </nav-bar>
       <kinds v-if="page === 3"></kinds>
       <how-to-bomb-page v-if="page === 4"></how-to-bomb-page>
       <how-to-bomb-page-two v-if="page === 5"></how-to-bomb-page-two>
       <how-to-bomb-page-three v-if="page === 6"></how-to-bomb-page-three>
       <game-info v-if="page === 7" @startGame="page = 8"></game-info>
       <game-page v-if="page === 8"></game-page>
+      <arrows  v-if="page >=2 && page < 7" @forward="page < 8 && (page += 1)" @back="page > 1 && (page -= 1)"/>
     </div>
 </template>
 
@@ -80,7 +80,12 @@ export default {
 
 html {
 	font-size: calc(10px + 0.5vw);
+  height: 91vh;
 }
 
-
+.app {
+  height: 91vh;
+  overflow: hidden;
+  position: relative;
+}
 </style> 
