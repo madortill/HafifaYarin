@@ -66,9 +66,9 @@
         selectedAnswer: null,
         images: {
           6: "src/assets/media/helmet.png",
-          8: "src/assets/media/suit.png",
-          19: "src/assets/media/balon.png",
-          23: "src/assets/media/astronaut.png",
+          8: "@/assets/media/suit.png",
+          19: "@/assets/media/balon.png",
+          23: "@/assets/media/astronaut.png",
         },
         itemNames: {
           6: "קסדה",
