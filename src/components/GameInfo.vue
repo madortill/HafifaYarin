@@ -1,7 +1,8 @@
 <template>
     <div id="GameInfo" class="game-info-page">
         <p class="header"> הוראות למשחק</p>
-        <div class="interactions"></div>
+        <div class="interactions"> במשחק זה תצטרכו לאסוף את כל הפריטים על מנת להיות אסטרונאוטים מוכשרים, כשתגיעו לכל פריט תופיע לכם שאלה ןתצטרכו לענות עליה נכון בסיום המשחק תגיעו לעמוד הסיום ותוכלו לראות מה הציון שלכם!!
+        </div>
         <button @click= "startGame">
             <img src="../assets/media/התחל.png" class="start-button"/>
         </button>
@@ -38,12 +39,18 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
   }
   
   .header {
    display: flex;
-    margin-top: 3rem; 
-    margin-left: 5rem; 
+   align-content: center;
+   margin-top: 2rem;
     font-size: 7ch;
     color: black; 
     z-index: 10; 
@@ -54,14 +61,12 @@
     display: flex;
     flex-wrap: wrap;
     background-color:#FFFFF6;
-    margin-top: 2rem;
-    margin-left: 3.9rem;
     font-family: 'Karantina-light';
     color: black;
     font-size: 2rem;
     border-radius: 2ch;
     width:17rem;
-    height: 25rem;
+    height: 20rem;
     direction: rtl;
 
   }
@@ -70,8 +75,8 @@
     position: absolute;
     bottom: 15vh;
     right: 25vw;
-  
     width: 50vw;
+
     
     
   }

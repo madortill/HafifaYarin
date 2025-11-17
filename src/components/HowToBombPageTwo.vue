@@ -1,9 +1,10 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-two">
       <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid"/>
-      <div class="text"> 11h 46m 13s -24° 25' 40"</div>
+      <div>
+        <p class="text"> 11h 46m 13s -24° 25' 40"</p>
         <img src="src/assets/media/Halalit.png" alt="halalit" class="halalit"/>  
-       
+      </div>
     </div>
   </template>
 
@@ -45,7 +46,6 @@
   .text {
     display: flex;
     background-color: #fffff6;
-    border-radius: 20%;
     height: 2.5rem;
     width: 8rem;
     margin-top: 13rem;

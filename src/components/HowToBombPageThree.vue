@@ -1,8 +1,10 @@
 <template>
     <div id="HowToBombPageTwo" class="how-to-bomb-page-three">
         <img src="src/assets/media/Artboard36.svg" alt="astroid" class="astroid" :class="{ moved: isFired }"/>
-        <img :src="laserImage" alt="laser" class="laser" :class="{fired: isFired}"/>
-        <div class="text"> {{text}}</div>
+        <div>
+          <img :src="laserImage" alt="laser" class="laser" :class="{fired: isFired}"/>
+          <div class="text"> {{text}}</div>
+        </div>
     </div>
   </template>
 
@@ -63,10 +65,10 @@ export default {
     background-color: #fffff6;
     height: 2.5rem;
     width: 8rem;
-    margin-left: 50%;
+    margin-top: -4rem;
+    margin-left: 15rem;
     font-size: 1rem;
     padding-left: 2%;
-    z-index: 9999;
     color:black;
     display: flex;
     align-items: center;
@@ -75,7 +77,7 @@ export default {
    
   .laser {
     display: flex;
-    margin-top: 7rem;
+    margin-top: 7rem; 
     margin-left: 14%;
     transform: rotate(18deg);
     width: 5rem;

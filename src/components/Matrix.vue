@@ -65,10 +65,10 @@
         currentQuestion: {},
         selectedAnswer: null,
         images: {
-          6: "../assets/media/קסדה.png",
-          8: "../assets/media/חליפה.png",
-          19: "../assets/media/בלון.png",
-          23: "../assets/media/אסטרונאוט.png",
+          6: "src/assets/media/helmet.png",
+          8: "src/assets/media/suit.png",
+          19: "src/assets/media/balon.png",
+          23: "src/assets/media/astronaut.png",
         },
         itemNames: {
           6: "קסדה",
@@ -259,7 +259,7 @@
   }
 
   .popup-buttons button.wrong {
-    border-color: #dd3416 !important;
+    background-color: #dd3416 !important;
     color: white;
     transform: scale(1.1);
   }
