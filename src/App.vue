@@ -9,8 +9,8 @@
       <how-to-bomb-page-two v-if="page === 5"></how-to-bomb-page-two>
       <how-to-bomb-page-three v-if="page === 6"></how-to-bomb-page-three>
       <game-info v-if="page === 7" @startGame="page = 8"></game-info>
-      <game-page v-if="page === 8" @change="page = $event"></game-page>
-      <finish-page v-if="page === 9"></finish-page>
+      <game-page v-if="page ===8" @finish="page = 9"></game-page>
+      <finish-page v-if="page === 9" @backLomda="page = 0"></finish-page>
       <arrows  v-if="page >=2 && page < 7" @forward="page < 8 && (page += 1)" @back="page > 1 && (page -= 1)"/>
     </div>
 </template>
@@ -60,7 +60,8 @@ export default {
       if (this.page >= 2) {
         this.page = targetPage;
       }
-   }
+   },
+  
   }
   };
 </script>

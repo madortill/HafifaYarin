@@ -1,7 +1,8 @@
 
 <template>
     <div class="game-page">
-      <matrix @collect-item="addCollect"></matrix>
+      <matrix @collect-item="addCollect" @change="move"></matrix>
+      
       <div class="collects">Your collects: {{ collected }}</div>
     </div>
   </template>
@@ -21,7 +22,13 @@
       addCollect() {
         this.collected++;
       },
+      move() {
+        console.log('in');
+        this.$emit("finish")
+       
+      }
     },
+   
   };
   </script>
   

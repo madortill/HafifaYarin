@@ -3,7 +3,7 @@
         <p class="header"> סיימת!!</p>
         <div class="info"> סיימת את לומדת באסטרואידים בהצלחה! כעת אתם אסטרונאוטים מוסמכים ויכולים להציל את העולם - במידת הצורך
         </div>
-        <button @click= "backLomda" class="back-button">
+        <button @click="backLomda" class="back-button"> חזור ללומדה
         </button>
     </div>
   </template>
@@ -17,7 +17,7 @@
       };
     },
     methods: {
-      startGame() {
+      backLomda() {
         this.$emit("backLomda");
       },
     }
@@ -67,14 +67,17 @@
     width:15rem;
     height: 20rem;
     direction: rtl;
+    text-align: center;
 
   }
 
   .back-button {
    display: flex;
-    bottom: 15vh;
-    right: 25vw;
-    width: 50vw;
+   background-color:rgb(233, 198, 134);
+   color: white;
+    height: 3rem;
+    border: none;
+    font-size: 2rem;
 
     
     

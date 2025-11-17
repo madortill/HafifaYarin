@@ -186,7 +186,8 @@ export default {
           this.selectedAnswer = null;
           this.currentItemPosition = null;
 
-          this.$emit ("change" , 9);
+          this.$emit("change");
+          console.log("bbb");
           return;
         }
 
