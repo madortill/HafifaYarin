@@ -65,7 +65,7 @@
     color: black;
     font-size: 2rem;
     border-radius: 2ch;
-    width:17rem;
+    width:15rem;
     height: 20rem;
     direction: rtl;
 

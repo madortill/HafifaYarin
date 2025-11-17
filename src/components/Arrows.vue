@@ -1,8 +1,8 @@
  <template>
 
     <div class="arrows">
-      <button @click="back" class="back-arrow"> חזור </button>
       <button @click="forward" class="forward-arrow"> הבא  </button>
+      <button @click="back" class="back-arrow"> חזור </button>
     </div>    
   </template>
   

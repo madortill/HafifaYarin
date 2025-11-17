@@ -58,6 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #ffc814;
   font-family: 'Karantina-Bold';
   color: white;
