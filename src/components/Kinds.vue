@@ -6,7 +6,7 @@
           <p>{{ item.text }}</p>
         </div>
         <div class="image">
-          <img :src="item.image" alt="תמונה" />
+          <img :src="imageUrl(item.image)" alt="תמונה" />
         </div>
       </div>
     </div>
@@ -18,12 +18,19 @@
     data() {
       return {
         cards: [
-          { text: "אסטרואיד בייבי - אסטרואיד ממש קטן והורס רק שכונות מקומיות." , image : './media/baby.png'},
-          { text: "אסטרואיד נער מתבגר - אסטרואיד שהוא די חרא כי הוא בכוונה מנסה להפציץ מקומות שהוא לא אוהב.", image : './media/teen.png' },
-          { text: ". אסטרואיד בוגר - אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ." , image : './media/old.png' }
+          { text: "אסטרואיד בייבי - אסטרואיד ממש קטן והורס רק שכונות מקומיות." , image : '/media/baby.png'},
+          { text: "אסטרואיד נער מתבגר - אסטרואיד שהוא די חרא כי הוא בכוונה מנסה להפציץ מקומות שהוא לא אוהב.", image : '/media/teen.png' },
+          { text: ". אסטרואיד בוגר - אסטרואיד ממש גדול שיכול להשמיד את כל כדור הארץ." , image : '/media/old.png' }
         ]
       };
-    }
+    },
+    methods: {
+    imageUrl(url) {
+      const basePath =
+        process.env.NODE_ENV === "production" ? "/HafifaYarin" : "";
+      return `${basePath + url}`;
+    },
+  },
   };
   </script>
   
